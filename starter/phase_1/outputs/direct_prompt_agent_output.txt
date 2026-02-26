@@ -1,0 +1,2 @@
+The capital of France is Paris.
+Knowledge source: The agent used the LLM's pre-trained (parametric) knowledge to answer the prompt. No external knowledge or system prompt was provided.

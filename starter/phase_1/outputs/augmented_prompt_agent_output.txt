@@ -1,0 +1,4 @@
+Paris
+
+Knowledge source: The agent used the LLM's pre-trained knowledge to answer the question.
+Persona impact: The system prompt persona caused the agent to respond as a college professor, starting with 'Dear students,' — shaping the tone without changing the factual content.

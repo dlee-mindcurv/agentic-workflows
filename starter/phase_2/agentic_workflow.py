@@ -135,21 +135,21 @@ development_engineer_evaluation_agent = EvaluationAgent(
 def product_manager_support_function(input_query):
     """Get user stories from PM knowledge agent, then validate with evaluation agent."""
     response = product_manager_knowledge_agent.respond(input_query)
-    result = product_manager_evaluation_agent.evaluate(input_query)
+    result = product_manager_evaluation_agent.evaluate(response)
     return result["final_response"]
 
 
 def program_manager_support_function(input_query):
     """Get product features from PgM knowledge agent, then validate with evaluation agent."""
     response = program_manager_knowledge_agent.respond(input_query)
-    result = program_manager_evaluation_agent.evaluate(input_query)
+    result = program_manager_evaluation_agent.evaluate(response)
     return result["final_response"]
 
 
 def development_engineer_support_function(input_query):
     """Get engineering tasks from Dev knowledge agent, then validate with evaluation agent."""
     response = development_engineer_knowledge_agent.respond(input_query)
-    result = development_engineer_evaluation_agent.evaluate(input_query)
+    result = development_engineer_evaluation_agent.evaluate(response)
     return result["final_response"]
 
 
@@ -207,10 +207,14 @@ for idx, step in enumerate(workflow_steps):
     print(f"\nResult for Step {idx+1}:\n{result}")
 
 # 4. Print the final output of the workflow
+print(f"\n--- Final Workflow Output ---\n")
+print(f"Total steps completed: {len(completed_steps)}\n")
+for idx, step_result in enumerate(completed_steps):
+    print(f"\n{'='*60}")
+    print(f"Step {idx+1} Result:")
+    print(f"{'='*60}")
+    print(step_result)
+
 print(f"\n{'='*60}")
 print("*** Workflow execution completed ***")
 print(f"{'='*60}")
-print(f"\nTotal steps completed: {len(completed_steps)}")
-print(f"\n--- Final Workflow Output ---\n")
-if completed_steps:
-    print(completed_steps[-1])
