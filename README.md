@@ -14,5 +14,9 @@ A `requirements.txt` file has been provided in this repo if you want to work on 
 
 You will find instructions for each of the two phases of the project in the README file inside the folder for that phase.
 
+## Acknowledgments
+
+This project was developed with assistance from [Anthropic Claude Code](https://claude.ai/claude-code), an AI-powered CLI tool for software engineering.
+
 ## License
 [License](../LICENSE.md)
